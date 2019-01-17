@@ -1,0 +1,20 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Frupal Config File                                                            #
+# Do not Delete any non-commented text in this file, or you with break it       #
+#                                                                               #
+# Config by Jeremy Carnahan                                                     #
+# <- This is a comment indicator, input ignores these lines                     #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# # # # # # # # # # 
+# Basic Settings  #
+# # # # # # # # # #
+
+# Board Size: Must be a number greater than 2 (Default 10)
+10
+
+# Total Obastacales: Number > 0 && Number < Boardsize^2 (Default 2)
+2
+
+# Total Shops: Number >= 0 (Default 1)
+1
