@@ -1,7 +1,7 @@
 //sample tiles
 package com.company;
 import java.util.Random;
-public class tilX//Tile
+public class tileX//Tile
 {
     private int id;
     private String name;
