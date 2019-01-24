@@ -12,7 +12,7 @@ public class Tile
     Tile(int id_in, String name, int fare_in){
         id = id_in; name = name_in; fare = fare_in; chance_val = new Random(); }  //ctor takes all but chance val
     Tile(int id_in, String name, int fare_in, int chance_in){
-        id = id_in; name = name_in; fare = fare_in; chance_val = chance_in; }  //ctor takes all but chance val
+        id = id_in; name = name_in; fare = fare_in; chance_val = chance_in; }  //ctor takes all values
 
     public void set_id(int id_in){ this.id = id_in;}
     public void set_name(String name_in){this.name = name_in;}
@@ -21,7 +21,7 @@ public class Tile
     public String get_fare(){return this.name;}
 
 
-public class boulder_tile extends tileX
+public class boulder_tile extends Tile
 {
     
     
