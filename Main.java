@@ -49,6 +49,7 @@ public class Main {
 
 
         boolean cont = true;
+        boolean playGame = false;
 
         while(cont) {
             String input = kb.nextLine();
@@ -68,5 +69,58 @@ public class Main {
             }
 
         }
+
+        //Gameloop, very basic right now as I'm not sure how this should be structured in relation to map and character
+        while (playGame){
+            //Draw map
+
+            //display cordinates, money and energy
+
+            System.out.println("Use wasd to move, pressing enter for each move.");
+            System.out.println("Alternatively, type \"i\" to see your inventory, or \"q\" to quit.");
+
+            String move = kb.nextLine();
+
+            switch(move){
+                case "w":   break;//move north
+                case "a":   break;//move west
+                case "s":   break;//move south
+                case "d":   break;//move east
+                case "i":   break;//show inventory
+                case "q":   System.out.println("Are you sure? y/n");
+                            move = kb.nextLine();
+                            if (move.equalsIgnoreCase("y")){
+                                endGame(1);
+                                playGame=false;
+                                break;
+                            }
+                            else
+                                move = "q";
+                                break;
+                default:    System.out.println("Invalid entry, please input a valid command");
+
+            }
+            if (playGame) {
+                //special tile activates
+                if (!move.equalsIgnoreCase("i")) /*and if tile is special*/ {
+                    //tile.interact();
+                }
+            }
+
+
+        }
+
+    }
+
+    private static boolean loadConfig(){
+        //load in the config file and prepare game
+        //Will do later as this is lower priority
+
+        return false;
+    }
+
+    private static void endGame(int exitState){
+        //a separate function to handle the ways the game can end
+
     }
 }
