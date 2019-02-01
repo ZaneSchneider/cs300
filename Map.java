@@ -27,8 +27,8 @@ public class Map {
 	}
 
 	public void printMap(){
-		for (int i = 0; i < this.xSize; i++){
-			for (int j = 0; j < this.ySize; j++){
+		for (int i = 0; i < this.ySize; i++){
+			for (int j = 0; j < this.xSize; j++){
 				System.out.print(area[i][j].get_id());
 			}
 			System.out.println();
