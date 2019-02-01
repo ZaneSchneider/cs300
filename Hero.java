@@ -1,6 +1,6 @@
 //Hero Class
 //Steven Lee 1/28
-package com.company;
+package company;
 
 public class Hero {
 
