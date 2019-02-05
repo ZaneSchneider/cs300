@@ -9,9 +9,9 @@ public class Tile
     private int chance_val; //int value for chance
 
     Tile(){id = 0; name = ""; fare = 999; chance_val = new Random(); }  //default ctor
-    Tile(int id_in, String name, int fare_in){
+    Tile(int id_in, String name_in, int fare_in){
         id = id_in; name = name_in; fare = fare_in; chance_val = new Random(); }  //ctor takes all but chance val
-    Tile(int id_in, String name, int fare_in, int chance_in){
+    Tile(int id_in, String name_in, int fare_in, int chance_in){
         id = id_in; name = name_in; fare = fare_in; chance_val = chance_in; }  //ctor takes all values
 
     public void set_id(int id_in){ this.id = id_in;}
