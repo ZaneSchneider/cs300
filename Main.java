@@ -8,8 +8,8 @@
 //  Created on: 1.21.19
 //
 //-------------------------------------------------------------------------------------------//
-
-package com.company;
+//package disabled so everyone doesnt have to set filepaths
+//package com.company;
 
 import java.util.Scanner;
 
