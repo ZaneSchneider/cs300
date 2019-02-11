@@ -2,20 +2,39 @@
 //
 //  main.java
 //
-//  Version:    1.0
-//  Date:       1.21.19
+//  Version:    1.2
+//  Date:       2.11.19 //Added basic game loop and separated main into functions
 //
 //  Created on: 1.21.19
 //
 //-------------------------------------------------------------------------------------------//
-//package disabled so everyone doesnt have to set filepaths
+
 //package com.company;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main{
 
-    public static void main(String[] args) {
+    private Map gameMap;
+    private Hero hero;
+
+    public void main(String[] args) {
+
+        if(mainMenu()){
+            if(loadConfig()) {
+                gameLoop();
+            }
+            else{
+                return;
+            }
+        }
+        else {
+            return;
+        }
+
+    }
+
+    private static boolean mainMenu(){
         System.out.println("FFFFFFFFFFFFFFFFFFFFFF                                                                           lllllll ");
         System.out.println("F::::::::::::::::::::F                                                                           l:::::l ");
         System.out.println("F::::::::::::::::::::F                                                                           l:::::l ");
@@ -54,12 +73,12 @@ public class Main {
             String input = kb.nextLine();
             if (input.equalsIgnoreCase("quit")) {
                 System.out.println("Okay, goodbye!");
-                return;
+                return false;
             }
             else if(input.equalsIgnoreCase("1")){
                 System.out.println("Okay, gaaaaame start!");
                 //Start the game
-                cont = false;
+                return true;
             }
             else if (input.equalsIgnoreCase("2")){
                 System.out.println("You're dead now!");
@@ -68,5 +87,72 @@ public class Main {
             }
 
         }
+        return false;
+    }
+
+    private static boolean gameLoop(){
+        boolean playGame = true;
+        //Gameloop, very basic right now as I'm not sure how this should be structured in relation to map and character
+        Scanner kb = new Scanner(System.in);
+
+        while (playGame){
+
+
+            //display cordinates, money and energy
+
+            System.out.println("Use wasd to move, pressing enter for each move.");
+            System.out.println("Alternatively, type \"i\" to see your inventory, or \"q\" to quit.");
+
+            String move = kb.nextLine();
+
+            switch(move){
+                case "w":   break;//move north
+                case "a":   break;//move west
+                case "s":   break;//move south
+                case "d":   break;//move east
+                case "i":   break;//show inventory
+                case "q":   System.out.println("Are you sure? y/n");
+                    move = kb.nextLine();
+                    if (move.equalsIgnoreCase("y")){
+                        endGame(1);
+                        playGame=false;
+                        break;
+                    }
+                    else
+                        move = "q";
+                    break;
+                default:    System.out.println("Invalid entry, please input a valid command");
+
+            }
+            if (playGame) {
+                //special tile activates
+                if (!move.equalsIgnoreCase("i")) /*and if tile is special*/ {
+                    //tile.interact();
+                }
+            }
+
+
+        }
+        return true;
+    }
+
+    private boolean loadConfig(){
+        //if file exists, continue
+        //else return false
+
+        //load in the config file and prepare game
+        //Will do later as this is lower priority
+
+        //uses defaults for nos, will read from config later
+
+        hero = new Hero("Steve", 100, 100);
+        gameMap = new Map();
+
+        return true;
+    }
+
+    private static void endGame(int exitState){
+        //a separate function to handle the ways the game can end
+
     }
 }
