@@ -89,7 +89,7 @@ public class Main{
             }
             else if (input.equalsIgnoreCase("2")){
                 System.out.println("You're dead now!");
-                //open the config file, or just show the config file name
+                //open the config file, or just show the config file name (didnt push so extra comment)
                 cont = false;
             }
 
