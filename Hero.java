@@ -62,7 +62,7 @@ public class Hero {
 		this.energy = amount;
 	}
 	//returns current energy value
-	public int getEnergy(int amount) {
+	public int getEnergy() {
 		return this.energy;
 	}
 	//adds an amount to energy score

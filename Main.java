@@ -11,6 +11,7 @@
 
 //package com.company;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Main{
@@ -40,7 +41,7 @@ public class Main{
 
     }
 
-    private static boolean mainMenu(){
+    private boolean mainMenu(){
         System.out.println("FFFFFFFFFFFFFFFFFFFFFF                                                                           lllllll ");
         System.out.println("F::::::::::::::::::::F                                                                           l:::::l ");
         System.out.println("F::::::::::::::::::::F                                                                           l:::::l ");
@@ -96,7 +97,7 @@ public class Main{
         return false;
     }
 
-    private static boolean gameLoop(){
+    private boolean gameLoop(){
         boolean playGame = true;
         //Gameloop, very basic right now as I'm not sure how this should be structured in relation to map and character
         Scanner kb = new Scanner(System.in);
@@ -117,6 +118,10 @@ public class Main{
                 case "s":   break;//move south
                 case "d":   break;//move east
                 case "i":   break;//show inventory
+                case "j":   //Teleport to jewel
+                            //Draw the entire board (handled in end game
+                            endGame(0);
+                            break;
                 case "q":   System.out.println("Are you sure? y/n");
                     move = kb.nextLine();
                     if (move.equalsIgnoreCase("y")){
@@ -142,10 +147,31 @@ public class Main{
         return true;
     }
 
+
+    //not finished, do not attempt to use.
     private boolean loadConfig(){
         //if file exists, continue
         //else return false
 
+            File file = new File("config.txt");
+            try {
+                Scanner scan = new Scanner(file);
+
+                int linenum = 0;
+                String line;
+                while (scan.hasNextLine()) {
+                    line = scan.nextLine();
+
+                    if (line.startsWith("#") || line.trim ().isEmpty ()) {
+                        continue; // Ignore the line, it is empty or commented out.
+                    }
+
+                }
+            }
+            catch(java.io.FileNotFoundException badFile){
+                System.out.println("No file of this name found, please enter a valid file name");
+                return false;
+            }
         //load in the config file and prepare game
         //Will do later as this is lower priority
 
@@ -157,8 +183,24 @@ public class Main{
         return true;
     }
 
-    private static void endGame(int exitState){
+
+    //exit state 0 = win the game
+    //exit state 1 = lose game/0 energy
+    //exit state 2 = error that cant be recovered from
+    private void endGame(int exitState){
         //a separate function to handle the ways the game can end
+        if (exitState == 0){
+            System.out.println("You've won the game!");
+            System.out.println("You ended with " + hero.getMoney() + " money, and " + hero.getEnergy() + "energy left.");
+        }
+        else if (exitState == 1){
+            System.out.println("You lost, try again next time!");
+
+        }
+        else if (exitState == 2){
+            System.out.println("Something strange has occurred, and the system cannot resolve the conflict. goodbye");
+        }
+
 
     }
 }
