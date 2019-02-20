@@ -6,15 +6,79 @@
 # <- This is a comment indicator, input ignores these lines                     #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Warning: I have no idea how to balance this without playing it
+
 # # # # # # # # # # 
 # Basic Settings  #
 # # # # # # # # # #
 
-# Board Size: Must be a number greater than 2 (Default 10)
+# Board Size: Must be a number greater than 2 (Default 20)
+20
+
+# Total Obstacles: Number > 0 && Number < Board Size^2 (Default 3)
+3
+
+# Total Shops: Number >= 0 (Default 3)
+3
+
+# Starting Money (Default 10)
 10
 
-# Total Obastacales: Number > 0 && Number < Boardsize^2 (Default 2)
+# Starting Energy (Default 100)
+100
+
+# Base Movement Cost (Default 1)
+1
+
+# # # # # # # # # #
+# Tool Settings   #
+# # # # # # # # # #
+
+# Tool 1 Name
+Saw
+
+# Tool 1 Obstacle
+Tree
+
+# Tool 1 Obstacle Behavior (Default: 'block' - block or extra energy)
+block
+
+# Tool 2 Name
+Rope
+
+# Tool 2 Obstacle
+Cliff
+
+# Tool 2 Obstacle Behavior (Default: 'block' - block or extra energy)
+block
+
+# Tool 3 Name
+Shamwow
+
+# Tool 3 Obstacle
+Puddle
+
+# Tool 3 Obstacle Behavior (Default: 'block' - block or extra energy)
+block
+
+# # # # # # # # # #
+# Shop Settings   #
+# # # # # # # # # #
+
+# Energy Price (Default 2)
 2
 
-# Total Shops: Number >= 0 (Default 1)
-1
+# Tool 1 Price (Default 100)
+100
+
+# Tool 2 Price (Default 100)
+100
+
+# Tool 3 Price (Default 100)
+100
+
+# Boat Price (Default 100)
+100
+
+# Binoculars Price (Default 100)
+100
